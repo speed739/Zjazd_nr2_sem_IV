@@ -4,8 +4,8 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
-namespace Zjazd_2_sem_IV
-{
+namespace Zjazd_nr_2
+{ 
    [Table("Laborki")]
     public class Zajecia
     {
