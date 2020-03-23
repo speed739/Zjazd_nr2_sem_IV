@@ -21,16 +21,16 @@ namespace Zjazd_nr_2
             //{
             //    Console.WriteLine(item.ToString());
             //}
-            Console.WriteLine("TEST");
+
             Northwind_Context northwindContext = new Northwind_Context();
             var ukClients = northwindContext.Klienci.Where(x => x.Miasto == "Londyn");
-            Console.WriteLine("TEST 2 ");
-            
+
+
             foreach (var client in ukClients)
             {
                 Console.WriteLine($"{client.NazwaFirmy} - {client.Kraj}");
             }
-            Console.WriteLine("TEST 3 ");
+
             Console.ReadLine();
 
         }
