@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Zjazd_nr_2.Baza_danych;
-
-namespace Zjazd_nr_2
+using Zjazd_nr_2_sem_IV.Baza;
+namespace Zjazd_nr_2_sem_IV
 {
     class Program
     {
@@ -21,18 +17,14 @@ namespace Zjazd_nr_2
             //{
             //    Console.WriteLine(item.ToString());
             //}
-
-            Northwind_Context northwindContext = new Northwind_Context();
-            var ukClients = northwindContext.Klienci.Where(x => x.Miasto == "Londyn");
-
+            NorthwindContext northwindContext = new NorthwindContext();
+            var ukClients = northwindContext.Customers.Where(x => x.City == "London");
 
             foreach (var client in ukClients)
             {
-                Console.WriteLine($"{client.NazwaFirmy} - {client.Kraj}");
+                Console.WriteLine($"{client.CompanyName} - {client.Country}");
             }
-
             Console.ReadLine();
-
         }
     }
 }
