@@ -18,11 +18,26 @@ namespace Zjazd_nr_2_sem_IV
             //    Console.WriteLine(item.ToString());
             //}
             NorthwindContext northwindContext = new NorthwindContext();
-            var ukClients = northwindContext.Customers.Where(x => x.City == "London");
 
-            foreach (var client in ukClients)
+            //var ukClients = northwindContext.Customers.Where(x => x.City == "London");
+            //foreach (var client in ukClients)
+            //{
+            //    Console.WriteLine($"{client.CompanyName} - {client.Country}");
+            //}
+           
+            var orders = northwindContext.Orders.Where(x => x.CustomerId == "ALFKI");
+            foreach (var order in orders)
             {
-                Console.WriteLine($"{client.CompanyName} - {client.Country}");
+                int orderId = order.OrderId;
+                var orders_details = northwindContext.OrderDetails.Where(x => x.OrderId == orderId);
+
+                Console.WriteLine("Produkty z zamowienia o nr " + orderId);
+                
+                foreach (var produkt in orders_details)
+                {
+                    Console.WriteLine(produkt.ProductId);
+                }
+                Console.WriteLine("----------------------");
             }
             Console.ReadLine();
         }
